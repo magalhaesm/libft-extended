@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:42:38 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/07/23 09:28:07 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/07/27 15:55:37 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_chunk	*purge(t_chunk **storage);
 char	*get_next_line(int fd)
 {
 	char			*line;
-	static t_chunk	*storage[FD_MAX] = {NULL};
+	static t_chunk	*storage[OPEN_MAX] = {NULL};
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);

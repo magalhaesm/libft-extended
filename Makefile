@@ -14,6 +14,7 @@ BONUS		= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c            \
 
 GNL			= gnl/get_next_line.c gnl/get_next_line_utils.c
 GNL_OBJ	= $(GNL:.c=.o)
+OPEN_MAX = $(shell getconf OPEN_MAX)
 
 OBJDIR		= objs
 OBJS		= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
@@ -21,6 +22,7 @@ OBJS_BONUS	= $(addprefix $(OBJDIR)/, $(BONUS:.c=.o))
 
 CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -f
+
 
 all:		$(NAME)
 
@@ -36,11 +38,12 @@ $(OBJDIR)/%.o:	%.c
 		ar -rcs $(NAME) $@
 
 gnl/%.o: gnl/%.c
-		$(CC) $(CFLAGS) -c $< -o $@
+		$(CC) $(CFLAGS) -D OPEN_MAX -c $< -o $@
 		ar -rcs $(NAME) $@
 
 clean:
 		$(RM) $(OBJS)
+		$(RM) $(OBJS_BONUS)
 		$(RM) -r $(OBJDIR)
 		$(RM) -r $(GNL_OBJ)
 

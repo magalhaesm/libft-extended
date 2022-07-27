@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:46:06 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/07/23 09:28:30 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/07/27 15:55:56 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 #  define BUFFER_SIZE 1024
 # endif
 
-# ifndef FD_MAX
-#  define FD_MAX 1024
+# ifndef OPEN_MAX
+#  define OPEN_MAX 256
 # endif
 
 typedef struct s_chunk {
