@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 17:13:46 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/08/05 13:38:07 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/08/05 13:42:19 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ static char	*to_string(t_param *spec, unsigned int nbr)
 		string = ft_itoa_base(nbr, LOWER_HEX);
 	else if (spec->code == 'o')
 		string = ft_itoa_base(nbr, OCTAL);
+	else if (spec->code == 'b')
+		string = ft_itoa_base(nbr, BINARY);
 	else
 		string = ft_itoa_base(nbr, UPPER_HEX);
 	return (string);
