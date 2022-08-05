@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 22:41:44 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/07/24 13:10:37 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/08/05 00:39:13 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 
 # include "gnl/get_next_line.h"
+# include "printf/include/ft_printf.h"
 
 typedef unsigned char	t_byte;
 

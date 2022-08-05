@@ -16,19 +16,23 @@ GNL			= gnl/get_next_line.c gnl/get_next_line_utils.c
 GNL_OBJ	= $(GNL:.c=.o)
 OPEN_MAX = $(shell getconf OPEN_MAX)
 
-OBJDIR		= objs
+PRINTF		= ft_printf.c parser.c printer.c flags.c parse_utils.c types.c      \
+				out_char.c out_string.c out_pointer.c out_signed.c              \
+				out_unsigned.c out_percent.c print_utils.c
+PRINTF_OBJ	= $(addprefix printf/obj/, $(PRINTF:.c=.o))
+
+OBJDIR		= obj
 OBJS		= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 OBJS_BONUS	= $(addprefix $(OBJDIR)/, $(BONUS:.c=.o))
 
 CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -f
 
-
 all:		$(NAME)
 
-$(NAME):	$(OBJDIR) $(OBJS) $(GNL_OBJ)
+$(NAME):	$(OBJDIR) $(OBJS) $(GNL_OBJ) $(PRINTF_OBJ)
 
-bonus:		$(OBJDIR) $(OBJS) $(OBJS_BONUS) $(GNL_OBJ)
+bonus:		$(OBJDIR) $(OBJS) $(OBJS_BONUS) $(GNL_OBJ) $(PRINTF_OBJ)
 
 $(OBJDIR):
 		mkdir -p $(OBJDIR)
@@ -38,18 +42,22 @@ $(OBJDIR)/%.o:	%.c
 		ar -rcs $(NAME) $@
 
 gnl/%.o: gnl/%.c
-		$(CC) $(CFLAGS) -D OPEN_MAX -c $< -o $@
+		$(CC) $(CFLAGS) -D OPEN_MAX=$(OPEN_MAX) -c $< -o $@
 		ar -rcs $(NAME) $@
+
+$(PRINTF_OBJ):
+		@make -C printf
 
 clean:
 		$(RM) $(OBJS)
 		$(RM) $(OBJS_BONUS)
 		$(RM) -r $(OBJDIR)
 		$(RM) -r $(GNL_OBJ)
+		@make fclean -C printf
 
 fclean:		clean
 		$(RM) $(NAME)
 
 re:			fclean all
 
-.PHONY:		all clean fclean re bonus gnl
+.PHONY:		all clean fclean re bonus gnl printf
