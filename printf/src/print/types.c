@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 10:28:36 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/08/05 12:56:09 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/08/05 13:39:00 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	init_printer(void)
 	types['i'] = out_signed;
 	types['u'] = out_unsigned;
 	types['x'] = out_unsigned;
+	types['o'] = out_unsigned;
 	types['X'] = out_unsigned;
 	types['%'] = out_percent;
 }

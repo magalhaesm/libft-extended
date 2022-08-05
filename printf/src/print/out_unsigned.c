@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 17:13:46 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/08/05 12:27:20 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/08/05 13:38:07 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ static char	*to_string(t_param *spec, unsigned int nbr)
 		string = ft_itoa_base(nbr, DECIMAL);
 	else if (spec->code == 'x')
 		string = ft_itoa_base(nbr, LOWER_HEX);
+	else if (spec->code == 'o')
+		string = ft_itoa_base(nbr, OCTAL);
 	else
 		string = ft_itoa_base(nbr, UPPER_HEX);
 	return (string);
@@ -56,6 +58,11 @@ static void	set_unsigned_prefix(t_param *spec, unsigned long *nbr)
 		{
 			spec->prefix = "0x";
 			spec->prefix_len = 2;
+		}
+		else if (spec->code == 'o')
+		{
+			spec->prefix = "0";
+			spec->prefix_len = 1;
 		}
 		else if (spec->code == 'X')
 		{
