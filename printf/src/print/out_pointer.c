@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 14:01:40 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/08/05 12:44:18 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/08/11 22:26:21 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,6 @@ int	out_pointer(t_param *spec, va_list args)
 
 static int	print_nil(t_param *spec)
 {
-	char	*nil;
-	int		written;
-
-	written = 0;
-	nil = "(nil)";
-	spec->width += (spec->prefix_len - 1);
-	written = put_number_justified(spec, nil, 5);
-	return (written);
+	spec->width--;
+	return (put_number_justified(spec, "(nil)", 5));
 }
