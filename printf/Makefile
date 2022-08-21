@@ -19,24 +19,26 @@ all:		$(NAME)
 
 $(NAME):	$(OBJ) $(SRC_OBJ) $(PRS_OBJ) $(PRT_OBJ)
 
+define compile
+	$(CC) $(CFLAGS) -c $< -o $@
+	ar -rc $(NAME) $@
+endef
+
 $(OBJ):
-		mkdir -p $(OBJ)
+	@mkdir -p $(OBJ)
 
 $(OBJ)/%.o:	src/%.c
-		$(CC) $(CFLAGS) -c $< -o $@
-		ar -rcs $(NAME) $@
+	$(compile)
 
 $(OBJ)/%.o:	src/parse/%.c
-		$(CC) $(CFLAGS) -c $< -o $@
-		ar -rcs $(NAME) $@
+	$(compile)
 
 $(OBJ)/%.o:	src/print/%.c
-		$(CC) $(CFLAGS) -c $< -o $@
-		ar -rcs $(NAME) $@
+	$(compile)
 
 clean:
-		$(RM) -r $(SRC_OBJ) $(PRS_OBJ) $(PRT_OBJ)
-		$(RM) -r $(OBJ)
+	$(RM) -r $(SRC_OBJ) $(PRS_OBJ) $(PRT_OBJ)
+	$(RM) -r $(OBJ)
 
 fclean:		clean
 
