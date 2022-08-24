@@ -3,6 +3,7 @@ NAME		= ../libft.a
 SRC			= get_next_line.c get_next_line_utils.c
 GNL_OBJ	= $(SRC:.c=.o)
 
+CFLAGS		= -Wall -Wextra -Werror
 OPEN_MAX = $(shell getconf OPEN_MAX)
 
 all:		$(NAME)

@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:46:06 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/07/27 15:55:56 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/09/06 12:05:16 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ int		has_newline(t_chunk *storage);
 int		sum_chunks(t_chunk *storage);
 t_chunk	*new_chunk(void);
 t_chunk	*last_chunk(t_chunk *storage);
-t_chunk	*writable_node(t_chunk **storage);
+t_chunk	*get_node(t_chunk **storage);
 
 #endif

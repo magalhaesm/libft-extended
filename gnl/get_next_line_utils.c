@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:46:00 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/07/06 10:29:40 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/09/06 12:05:05 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_chunk	*last_chunk(t_chunk *storage)
 	return (storage);
 }
 
-t_chunk	*writable_node(t_chunk **storage)
+t_chunk	*get_node(t_chunk **storage)
 {
 	t_chunk	*node;
 
