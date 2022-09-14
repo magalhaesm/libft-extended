@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 17:22:09 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/08/05 13:41:40 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/09/14 17:45:23 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,6 @@
 
 # include "ft_printf.h"
 # include "../../libft.h"
-
-# define BINARY "01"
-# define OCTAL "01234567"
-# define DECIMAL "0123456789"
-# define LOWER_HEX "0123456789abcdef"
-# define UPPER_HEX "0123456789ABCDEF"
 
 typedef int	(*t_out)(t_param *, va_list);
 

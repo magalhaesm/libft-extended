@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 22:41:44 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/08/05 00:39:13 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/09/14 17:45:42 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 
 # include "gnl/get_next_line.h"
 # include "printf/include/ft_printf.h"
+
+# define BINARY "01"
+# define OCTAL "01234567"
+# define DECIMAL "0123456789"
+# define LOWER_HEX "0123456789abcdef"
+# define UPPER_HEX "0123456789ABCDEF"
 
 typedef unsigned char	t_byte;
 
@@ -61,6 +67,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
+char	*ft_itoa_base(unsigned long nbr, char *nbr_sys);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
