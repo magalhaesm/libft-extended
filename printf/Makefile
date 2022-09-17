@@ -20,7 +20,7 @@ all:		$(NAME)
 $(NAME):	$(OBJ) $(SRC_OBJ) $(PRS_OBJ) $(PRT_OBJ)
 
 define compile
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -I.. -o $@
 	ar -rc $(NAME) $@
 endef
 

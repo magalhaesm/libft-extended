@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 21:35:18 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/08/05 12:35:39 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/09/17 20:53:28 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PARSER_H
 
 # include "ft_printf.h"
-# include "../../libft.h"
 
 typedef void	(*t_flag)(t_param *);
 

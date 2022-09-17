@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 17:22:09 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/09/14 17:45:23 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/09/17 20:54:11 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PRINTER_H
 
 # include "ft_printf.h"
-# include "../../libft.h"
 
 typedef int	(*t_out)(t_param *, va_list);
 

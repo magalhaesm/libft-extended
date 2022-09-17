@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 22:41:44 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/09/14 17:45:42 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/09/17 20:43:35 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# include "gnl/get_next_line.h"
-# include "printf/include/ft_printf.h"
-
 # define BINARY "01"
 # define OCTAL "01234567"
 # define DECIMAL "0123456789"
@@ -26,6 +23,12 @@
 # define UPPER_HEX "0123456789ABCDEF"
 
 typedef unsigned char	t_byte;
+
+typedef enum e_bool
+{
+	FALSE,
+	TRUE
+}	t_bool;
 
 typedef struct s_list
 {
@@ -83,5 +86,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+char	*get_next_line(int fd);
+int		ft_printf(const char *format, ...);
 
 #endif
