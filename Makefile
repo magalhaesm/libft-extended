@@ -34,8 +34,8 @@ bonus:		$(OBJDIR) $(OBJS) $(OBJS_BONUS) gnl printf
 $(OBJDIR):
 	@mkdir -p $(OBJDIR)
 
-$(OBJDIR)/%.o:	%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJDIR)/%.o:	src/%.c
+	$(CC) $(CFLAGS) -I. -c $< -o $@
 	ar -rc $(NAME) $@
 
 gnl:
