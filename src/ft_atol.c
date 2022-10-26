@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 15:52:46 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/26 14:10:43 by mdias-ma         ###   ########.fr       */
+/*   Created: 2022/10/26 14:01:10 by mdias-ma          #+#    #+#             */
+/*   Updated: 2022/10/26 14:01:34 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long	ft_atol(const char *nptr)
 {
-	int	total;
-	int	sign;
+	int		sign;
+	long	total;
 
 	sign = 1;
 	total = 0;
